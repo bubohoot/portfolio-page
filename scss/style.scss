@@ -1,35 +1,59 @@
 @import "normalize.scss";
 
 // === Variables ===
-$text-color: #fff;
+$text-clr: #fff;
+$welcome-bgclr: #000;
+$projects-bgclr: #45567d;
 // === /Variables ===
-
 // === Common ===
 * {
 	margin: 0;
 	padding: 0;
 }
 
+body,
+a {
+	color: $text-clr;
+}
+
 body {
 	font: 10px "Poppins", sans-serif;
-	color: $text-color;
+}
+
+h1,
+h2 {
+	font-family: "Raleway", sans-serif;
+	text-align: center;
+	font-size: 6.2em;
+	font-weight: 700;
+}
+
+p {
+	text-align: center;
 }
 
 a {
 	text-decoration: none;
-	color: $text-color;
 }
 
 li {
 	list-style: none;
 }
+
+.page-wrapper {
+	position: relative;
+}
 // === /Common ===
 
 // === Navigation bar ===
 .nav-bar {
-	min-height: 60px;
+	width: 100%;
+	min-height: 70px;
 	background-color: #be3144;
-
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1;
 	.nav-list {
 		display: flex;
 		justify-content: flex-end;
@@ -37,10 +61,37 @@ li {
 	}
 
 	.nav-links {
-		padding: 20px;
-		font-size: 2.2rem;
+		font-size: 2.2em;
 		display: block;
+		padding: 20px;
+	}
+}
+// === /Navigation bar ===
+
+// === Welcome section ===
+.welcome-section {
+	position: relative;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: $welcome-bgclr;
+
+	h1,
+	p {
+		display: block;
+	}
+
+	p {
+		font-size: 30px;
 	}
 }
 
-// === /Navigation bar ===
+// === /Welcome section ===
+
+// === Projects section ===
+.projects {
+	background-color: $projects-bgclr;
+}
+// === /Projects section ===

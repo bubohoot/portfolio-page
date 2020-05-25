@@ -307,25 +307,62 @@ template {
   margin: 0;
   padding: 0; }
 
-body {
-  font: 10px "Poppins", sans-serif;
+body,
+a {
   color: #fff; }
 
+body {
+  font: 10px "Poppins", sans-serif; }
+
+h1,
+h2 {
+  font-family: "Raleway", sans-serif;
+  text-align: center;
+  font-size: 6.2em;
+  font-weight: 700; }
+
+p {
+  text-align: center; }
+
 a {
-  text-decoration: none;
-  color: #fff; }
+  text-decoration: none; }
 
 li {
   list-style: none; }
 
+.page-wrapper {
+  position: relative; }
+
 .nav-bar {
-  min-height: 60px;
-  background-color: #be3144; }
+  width: 100%;
+  min-height: 70px;
+  background-color: #be3144;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1; }
   .nav-bar .nav-list {
     display: flex;
     justify-content: flex-end;
     padding-right: 2em; }
   .nav-bar .nav-links {
-    padding: 20px;
     font-size: 2.2em;
+    display: block;
+    padding: 20px; }
+
+.welcome-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #000; }
+  .welcome-section h1,
+  .welcome-section p {
     display: block; }
+  .welcome-section p {
+    font-size: 30px; }
+
+.projects {
+  background-color: #45567d; }
