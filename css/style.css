@@ -306,6 +306,18 @@ template {
 html {
   font-size: 10px; }
 
+@media (max-width: 800px) {
+  html {
+    font-size: 7px; } }
+
+@media (max-width: 480px) {
+  html {
+    font-size: 6px; } }
+
+@media (max-width: 320px) {
+  html {
+    font-size: 4px; } }
+
 * {
   margin: 0;
   padding: 0; }
@@ -316,7 +328,8 @@ a {
 
 body {
   font: 10px "Poppins", sans-serif;
-  line-height: 1.5; }
+  line-height: 1.5;
+  background-color: #303841; }
 
 a {
   text-decoration: none; }
@@ -324,7 +337,7 @@ a {
 h1,
 h2 {
   font-family: "Raleway", sans-serif;
-  font-size: 6.2em;
+  font-size: 6.2rem;
   font-weight: 700;
   display: block; }
 
@@ -344,10 +357,10 @@ ul {
   margin: 0 auto; }
   .btn-show-all {
     background-color: #303841;
-    font-size: 1.92em;
+    font-size: 1.92rem;
     transition: 0.3s ease-out; }
   .btn-show-all:hover {
-    background-color: #be3144; }
+    background-color: #eea928; }
   .btn-show-all > span {
     margin-left: 10px;
     transform: translateX(0);
@@ -360,7 +373,7 @@ ul {
 
 .nav-bar {
   width: 100%;
-  min-height: 70px;
+  min-height: 6rem;
   background-color: #be3144;
   position: fixed;
   top: 0;
@@ -370,11 +383,14 @@ ul {
   .nav-bar .nav-list {
     display: flex;
     justify-content: flex-end;
-    padding-right: 2em; }
+    padding-right: 2rem; }
   .nav-bar .nav-links {
-    font-size: 2.2em;
+    font-size: 2.2rem;
     display: block;
-    padding: 20px; }
+    padding: 1.9rem;
+    transition: 0.3s ease-in-out 0.1s; }
+    .nav-bar .nav-links:hover {
+      background-color: #45567d; }
 
 .welcome-section {
   position: relative;
@@ -386,32 +402,66 @@ ul {
   background-color: #000;
   background: radial-gradient(#35383a, #1c1b1d); }
   .welcome-section p {
-    font-size: 3em; }
+    font-size: 3rem;
+    font-weight: 200;
+    font-style: italic;
+    color: #ad1d30; }
 
 .projects {
   background-color: #45567d;
   text-align: center;
-  padding: 60px 20px; }
+  padding: 6rem 2rem; }
   .projects .projects-header {
     border-bottom: 0.2rem solid #fff;
-    font-size: 4.2em;
+    font-size: 4.2rem;
     padding: 0px;
     margin: 0 auto;
-    max-width: 640px; }
-  .projects .projects-grid {
+    max-width: 64rem; }
+  .projects .projects-tile {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    max-width: 1280px;
-    margin: 60px auto;
+    grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
+    max-width: 128rem;
+    margin: 6rem auto;
     grid-gap: 2rem; }
-    .projects .projects-grid .project-image {
-      display: block;
-      object-fit: cover;
-      height: calc(100% - 7rem);
-      width: 100%; }
-    .projects .projects-grid p {
-      padding: 2rem 0;
-      font-size: 1.92em; }
+  .projects .project-image {
+    display: block;
+    object-fit: cover;
+    height: 40vh;
+    width: 100%; }
+  .projects p {
+    padding: 2rem 0;
+    font-size: 1.92rem; }
+
+@media (max-width: 560px) {
+  .projects-tile {
+    grid-template-columns: repeat(auto-fit, minmax(60rem, 1fr));
+    width: 65rem; }
+  .project-image {
+    width: auto; } }
+
+@media (max-width: 480px) {
+  .projects-tile {
+    grid-template-columns: repeat(auto-fit, minmax(60rem, 1fr));
+    width: 65rem; }
+  .project-image {
+    width: auto; } }
+
+@media (max-width: 360px) and (max-height: 640px) {
+  .projects-header {
+    width: 50rem;
+    font-size: 3.3rem !important; }
+  .projects-tile {
+    grid-template-columns: repeat(auto-fit, minmax(45rem, 1fr));
+    width: 50rem; }
+  .project-image {
+    width: auto; } }
+
+@media (max-width: 320px) {
+  .projects-tile {
+    grid-template-columns: repeat(auto-fit, minmax(60rem, 1fr));
+    width: 65rem; }
+  .project-image {
+    width: auto; } }
 
 .project-link {
   box-shadow: 1px 0 1px #000;
@@ -424,3 +474,40 @@ ul {
 
 .project-link:hover .symbol {
   color: #ff7f50; }
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90vh; }
+  .contact > p {
+    font-size: 1.8rem;
+    font-style: italic; }
+  .contact .contact-links {
+    max-width: 1100px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 4rem; }
+  .contact-details {
+    font-size: 2.2rem;
+    padding: 1rem 2rem;
+    max-width: 230px;
+    margin: 0;
+    text-shadow: 2px 2px 1px #1f1f1f;
+    transition: 0.3s ease-in-out; }
+  .contact-details:hover {
+    transform: translateY(8px); }
+  .contact-details > span {
+    margin-right: 5px; }
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  border-top: 0.5rem solid #be3144;
+  height: 10vh; }
+  .footer > p {
+    font-size: 1.7rem; }
