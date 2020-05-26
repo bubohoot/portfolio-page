@@ -6,6 +6,10 @@ $welcome-bgclr: #000;
 $projects-bgclr: #45567d;
 // === /Variables ===
 // === Common ===
+html {
+	font-size: 10px;
+}
+
 * {
 	margin: 0;
 	padding: 0;
@@ -18,26 +22,55 @@ a {
 
 body {
 	font: 10px "Poppins", sans-serif;
-}
-
-h1,
-h2 {
-	font-family: "Raleway", sans-serif;
-	text-align: center;
-	font-size: 6.2em;
-	font-weight: 700;
-}
-
-p {
-	text-align: center;
+	line-height: 1.5;
 }
 
 a {
 	text-decoration: none;
 }
 
-li {
+h1,
+h2 {
+	font-family: "Raleway", sans-serif;
+	font-size: 6.2em;
+	font-weight: 700;
+	display: block;
+}
+
+h1,
+h2,
+p {
+	text-align: center;
+	display: block;
+}
+
+ul {
 	list-style: none;
+}
+
+.btn {
+	display: block;
+	padding: 10px 20px;
+
+	max-width: 120px;
+	margin: 0 auto;
+
+	&-show-all {
+		background-color: #303841;
+		font-size: 1.92em;
+		transition: 0.3s ease-out;
+	}
+	&-show-all:hover {
+		background-color: #be3144;
+	}
+	&-show-all > span {
+		margin-left: 10px;
+		transform: translateX(0);
+		transition: 0.3s ease-out;
+	}
+	&-show-all:hover > span {
+		transform: translateX(2px);
+	}
 }
 
 .page-wrapper {
@@ -54,6 +87,8 @@ li {
 	top: 0;
 	left: 0;
 	z-index: 1;
+	box-shadow: 0 1px #000, inset 2px 0 #000;
+
 	.nav-list {
 		display: flex;
 		justify-content: flex-end;
@@ -77,21 +112,62 @@ li {
 	align-items: center;
 	justify-content: center;
 	background-color: $welcome-bgclr;
-
-	h1,
-	p {
-		display: block;
-	}
+	background: radial-gradient(#35383a, #1c1b1d);
 
 	p {
-		font-size: 30px;
+		font-size: 3em;
 	}
 }
-
 // === /Welcome section ===
 
 // === Projects section ===
 .projects {
 	background-color: $projects-bgclr;
+	text-align: center;
+	padding: 60px 20px;
+
+	.projects-header {
+		border-bottom: 0.2rem solid $text-clr;
+		font-size: 4.2em;
+		padding: 0px;
+		margin: 0 auto;
+		max-width: 640px;
+	}
+
+	.projects-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+		max-width: 1280px;
+		margin: 60px auto;
+		grid-gap: 2rem;
+
+		.project-image {
+			display: block;
+			object-fit: cover;
+			height: calc(100% - 7rem);
+			width: 100%;
+		}
+
+		p {
+			padding: 2rem 0;
+			font-size: 1.92em;
+		}
+	}
 }
+
+.project-link {
+	box-shadow: 1px 0 1px #000;
+	border-radius: 2px;
+	background-color: #303841;
+}
+
+.symbol {
+	color: #303841;
+	transition: color 0.3s easeOutQuad;
+}
+
+.project-link:hover .symbol {
+	color: #ff7f50;
+}
+
 // === /Projects section ===
